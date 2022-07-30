@@ -1,1 +1,1 @@
-# VanillaJS-projects
+# Mini VanillaJS-projects 
