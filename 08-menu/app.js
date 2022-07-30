@@ -91,10 +91,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function displayMenuItems(menuItems) {
-  console.log('shake and bake');
   let displayMenu = menuItems.map((item) => {
-    // console.log(item)
-    // return item
     return `<article class=menu-item>
     <img src = ${item.img} class="photo" alt=${item.title}/>
     <div class="item-info">
@@ -110,7 +107,6 @@ function displayMenuItems(menuItems) {
   });
   displayMenu = displayMenu.join('');
   sectionCenter.innerHTML = displayMenu;
-  console.log(displayMenu);
 }
 
 function displayMenuButtons() {
@@ -118,24 +114,19 @@ function displayMenuButtons() {
     return item.category;
   });
   const uniqueCategory = ['all', ...new Set(categories)];
-  console.log(categories);
-  console.log(uniqueCategory);
   const categoryBtns = uniqueCategory
     .map((category) => {
       return `<button class="filter-btn" type="button" data-id ="${category}">${category}</button>`;
     })
     .join('');
-  console.log(categoryBtns);
   container.innerHTML = categoryBtns;
   const filterBtns = container.querySelectorAll('.filter-btn');
 
   //filter items
 filterBtns.forEach((btn) => {
   btn.addEventListener('click', function (e) {
-    // console.log(e.currentTarget.dataset.id)
     const category = e.currentTarget.dataset.id;
     const menuCategory = menu.filter((menuItem) => {
-      console.log(menuItem.category);
       if (menuItem.category === category) {
         return menuItem;
       }
@@ -145,7 +136,6 @@ filterBtns.forEach((btn) => {
     } else {
       displayMenuItems(menuCategory);
     }
-    // console.log(menuCategory);
   });
 });
 }
