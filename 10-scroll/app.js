@@ -42,7 +42,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ********** smooth scroll ************
-// select links
+//! select links 
 const scrollLinks = document.querySelectorAll('.scroll-link');
 scrollLinks.forEach(function (link) {
   link.addEventListener('click', function (e) {
